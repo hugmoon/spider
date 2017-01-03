@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="djl">
+        <title></title>
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+    <div class="container">
+		<div class="panel panel-success">
+			  <div class="panel-heading">
+					<h3 class="panel-title">视频</h3>
+			  </div>
+			  <div class="panel-body">
+			  		<!-- 左侧导航 -->
+					<div class="col-md-2" id="navList">
+					</div>
+					<!-- 右侧内容区域 -->
+					<div class="col-md-10">
+						<div class="input-group">
+					      <input type="text" id="txtSearch" placeholder="请输入查询关键字" class="form-control">
+					      <span class="input-group-btn">
+					        <button id="btnSearch" class="btn btn-default" type="button">Go!</button>
+					      </span>
+					    </div>
+					    <div id="videosContainer">
+					    </div>
+					</div>
+			  </div>
+		</div>
+	</div>
+    
+    <script type="text/html" id="tplvideosType">
+        {{each videoTypes}}
+        <div class="list-group">
+            <a href="#" data-tid="{{$value.code}}" class="list-group-item">{{$value.name}}</a>
+        </div>
+        {{/each}}
+    </script>
+     
+     <script type="text/html" id="tplvideosList">
+      {{each videos}}
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <a href="{{$value.link}}" target="_blank">
+                <div class="thumbnail">
+                    <img src="{{$value.img}}" alt="">
+                    <div class="caption">
+                        <p>{{$value.title}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+     </script>
+
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+	<script src="js/meipai.js"></script> 
+    </body>
+<html>
